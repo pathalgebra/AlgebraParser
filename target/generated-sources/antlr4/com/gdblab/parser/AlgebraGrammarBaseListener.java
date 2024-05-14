@@ -220,6 +220,18 @@ public class AlgebraGrammarBaseListener implements AlgebraGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterPATH(AlgebraGrammarParser.PATHContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPATH(AlgebraGrammarParser.PATHContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterPARTITIONGROUP(AlgebraGrammarParser.PARTITIONGROUPContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -227,6 +239,42 @@ public class AlgebraGrammarBaseListener implements AlgebraGrammarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitPARTITIONGROUP(AlgebraGrammarParser.PARTITIONGROUPContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterPARTITIONPATH(AlgebraGrammarParser.PARTITIONPATHContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPARTITIONPATH(AlgebraGrammarParser.PARTITIONPATHContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterGROUPPATH(AlgebraGrammarParser.GROUPPATHContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitGROUPPATH(AlgebraGrammarParser.GROUPPATHContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterPARTITIONGROUPPATH(AlgebraGrammarParser.PARTITIONGROUPPATHContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPARTITIONGROUPPATH(AlgebraGrammarParser.PARTITIONGROUPPATHContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

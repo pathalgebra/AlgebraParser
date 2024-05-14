@@ -1,6 +1,6 @@
 grammar AlgebraGrammar;
 
-query           :   'MATCH' selector restrictor pathPattern groupby? orderby?  EOF;
+query           :   'MATCH' selector restrictor? pathPattern groupby? orderby?  EOF;
 pathPattern     :   pathName '=' nodePattern edgePattern nodePattern ('WHERE' complexCondition)? ;
 nodePattern     :   '('var? label?')';
 edgePattern     :   '-['rpq?']->' | '<-['rpq?']' | '~['rpq?']~';
@@ -14,7 +14,11 @@ orderby         :   'ORDER BY' orderbyoption;
 groupby         :   'GROUP BY' groupbyoption;
 orderbyoption   :   'PARTITION' # PARTITION
                 |   'GROUP'     #GROUP
-                |   'PARTITION GROUP' #PARTITIONGROUP;
+                |   'PATH'     #PATH
+                |   'PARTITION GROUP' #PARTITIONGROUP
+                |   'PARTITION PATH' #PARTITIONPATH
+                |   'GROUP PATH' #GROUPPATH
+                |   'PARTITION GROUP PATH' #PARTITIONGROUPPATH;
 groupbyoption   :   'SOURCE' # SOURCE 
                 |   'TARGET' # TARGET
                 |   'LENGTH' # LENGTH

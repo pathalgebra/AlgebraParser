@@ -120,12 +120,40 @@ public interface AlgebraGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitGROUP(AlgebraGrammarParser.GROUPContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code PATH}
+	 * labeled alternative in {@link AlgebraGrammarParser#orderbyoption}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPATH(AlgebraGrammarParser.PATHContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code PARTITIONGROUP}
 	 * labeled alternative in {@link AlgebraGrammarParser#orderbyoption}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitPARTITIONGROUP(AlgebraGrammarParser.PARTITIONGROUPContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code PARTITIONPATH}
+	 * labeled alternative in {@link AlgebraGrammarParser#orderbyoption}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPARTITIONPATH(AlgebraGrammarParser.PARTITIONPATHContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code GROUPPATH}
+	 * labeled alternative in {@link AlgebraGrammarParser#orderbyoption}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitGROUPPATH(AlgebraGrammarParser.GROUPPATHContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code PARTITIONGROUPPATH}
+	 * labeled alternative in {@link AlgebraGrammarParser#orderbyoption}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPARTITIONGROUPPATH(AlgebraGrammarParser.PARTITIONGROUPPATHContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code SOURCE}
 	 * labeled alternative in {@link AlgebraGrammarParser#groupbyoption}.

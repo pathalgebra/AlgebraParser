@@ -40,7 +40,7 @@ public class Main {
                     System.exit(0);
                 }
                 else if (query.equals("/e")) {
-                    query= "MATCH ALL PARTITIONS ALL GROUPS 1 PATHS WALK p = (?x)-[(:Likes|:Knows)* {SIMPLE} /(:Likes*|:Knows+)?]->(?y) WHERE  Property(first(p),name) = 'Apu' AND  Property(last(p),name) = 'Lisa' GROUP BY TARGET ORDER BY GROUP";
+                    query= "MATCH ALL PARTITIONS ALL GROUPS 1 PATHS TRAIL p = (?x)-[(:Likes|:Knows)* {SIMPLE} /(:Likes*|:Knows+)?]->(?y) WHERE  Property(first(p),name) = 'Apu' AND  Property(last(p),name) = 'Lisa' GROUP BY TARGET ORDER BY GROUP";
                     System.out.println(query);
                 }
             }

@@ -192,6 +192,18 @@ public interface AlgebraGrammarListener extends ParseTreeListener {
 	 */
 	void exitGROUP(AlgebraGrammarParser.GROUPContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code PATH}
+	 * labeled alternative in {@link AlgebraGrammarParser#orderbyoption}.
+	 * @param ctx the parse tree
+	 */
+	void enterPATH(AlgebraGrammarParser.PATHContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code PATH}
+	 * labeled alternative in {@link AlgebraGrammarParser#orderbyoption}.
+	 * @param ctx the parse tree
+	 */
+	void exitPATH(AlgebraGrammarParser.PATHContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code PARTITIONGROUP}
 	 * labeled alternative in {@link AlgebraGrammarParser#orderbyoption}.
 	 * @param ctx the parse tree
@@ -203,6 +215,42 @@ public interface AlgebraGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitPARTITIONGROUP(AlgebraGrammarParser.PARTITIONGROUPContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code PARTITIONPATH}
+	 * labeled alternative in {@link AlgebraGrammarParser#orderbyoption}.
+	 * @param ctx the parse tree
+	 */
+	void enterPARTITIONPATH(AlgebraGrammarParser.PARTITIONPATHContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code PARTITIONPATH}
+	 * labeled alternative in {@link AlgebraGrammarParser#orderbyoption}.
+	 * @param ctx the parse tree
+	 */
+	void exitPARTITIONPATH(AlgebraGrammarParser.PARTITIONPATHContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code GROUPPATH}
+	 * labeled alternative in {@link AlgebraGrammarParser#orderbyoption}.
+	 * @param ctx the parse tree
+	 */
+	void enterGROUPPATH(AlgebraGrammarParser.GROUPPATHContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code GROUPPATH}
+	 * labeled alternative in {@link AlgebraGrammarParser#orderbyoption}.
+	 * @param ctx the parse tree
+	 */
+	void exitGROUPPATH(AlgebraGrammarParser.GROUPPATHContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code PARTITIONGROUPPATH}
+	 * labeled alternative in {@link AlgebraGrammarParser#orderbyoption}.
+	 * @param ctx the parse tree
+	 */
+	void enterPARTITIONGROUPPATH(AlgebraGrammarParser.PARTITIONGROUPPATHContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code PARTITIONGROUPPATH}
+	 * labeled alternative in {@link AlgebraGrammarParser#orderbyoption}.
+	 * @param ctx the parse tree
+	 */
+	void exitPARTITIONGROUPPATH(AlgebraGrammarParser.PARTITIONGROUPPATHContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code SOURCE}
 	 * labeled alternative in {@link AlgebraGrammarParser#groupbyoption}.

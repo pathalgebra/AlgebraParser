@@ -91,8 +91,12 @@ public class AlgebraTree {
         printDeepness(deep, orderBy);
         String group = "Group ("+groupby+")";
         printDeepness(deep, group);
-        String restrictor = "Restrictor ("+outterRestrictor+")";
-        printDeepness(deep, restrictor);
+        if(!outterRestrictor.isBlank()){
+           String restrictor = "Restrictor ("+outterRestrictor+")";
+           printDeepness(deep, restrictor); 
+        }
+        
+        
         
         if (this.condition != null ){
             String select ="Select( "+this.condition+ " )";

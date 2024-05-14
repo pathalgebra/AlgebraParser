@@ -1,7 +1,6 @@
 com\gdblab\parser\AlgebraGrammarParser$OrderbyoptionContext.class
 com\gdblab\parser\impl\UnaryRPQExpression.class
 com\gdblab\parser\AlgebraGrammarParser$RestrictorContext.class
-com\gdblab\parser\impl\ZeroOrMoreExpression.class
 com\gdblab\parser\AlgebraGrammarParser.class
 com\gdblab\parser\AlgebraGrammarParser$SOURCETARGETLENGTHContext.class
 com\gdblab\parser\AlgebraGrammarParser$NegatedContext.class
@@ -14,8 +13,10 @@ com\gdblab\parser\AlgebraGrammarParser$ACYCLICContext.class
 com\gdblab\parser\AlgebraTree.class
 com\gdblab\parser\AlgebraGrammarParser$SelectorContext.class
 com\gdblab\parser\impl\ParenthesisPathExpression.class
+com\gdblab\parser\AlgebraGrammarParser$GROUPPATHContext.class
 com\gdblab\parser\AlgebraGrammarParser$FunctionContext.class
 com\gdblab\parser\AlgebraGrammarParser$TARGETLENGTHContext.class
+com\gdblab\parser\AlgebraGrammarParser$PARTITIONGROUPPATHContext.class
 com\gdblab\parser\AlgebraGrammarParser$GroupbyoptionContext.class
 com\gdblab\parser\AlgebraGrammarParser$NumberContext.class
 com\gdblab\parser\AlgebraGrammarParser$TextContext.class
@@ -37,6 +38,7 @@ com\gdblab\parser\AlgebraGrammarParser$PlusContext.class
 com\gdblab\parser\AlgebraGrammarParser$EdgePatternContext.class
 com\gdblab\parser\AlgebraGrammarParser$LENGTHContext.class
 com\gdblab\parser\impl\AlternationPathExpression.class
+com\gdblab\parser\AlgebraGrammarParser$PARTITIONPATHContext.class
 com\gdblab\parser\AlgebraGrammarParser$ConditionContext.class
 com\gdblab\parser\AlgebraGrammarParser$BoolOpContext.class
 com\gdblab\parser\AlgebraGrammarParser$SOURCELENGTHContext.class
@@ -44,6 +46,7 @@ com\gdblab\parser\AlgebraGrammarVisitor.class
 com\gdblab\parser\AlgebraGrammarParser$GROUPContext.class
 com\gdblab\parser\AlgebraGrammarParser$VarContext.class
 com\gdblab\parser\AlgebraGrammarParser$PARTITIONContext.class
+com\gdblab\parser\AlgebraGrammarParser$PATHContext.class
 com\gdblab\parser\AlgebraGrammarParser$ComplexConditionContext.class
 com\gdblab\parser\impl\ConcatenationPathExpression.class
 com\gdblab\parser\impl\OptionalExpression.class

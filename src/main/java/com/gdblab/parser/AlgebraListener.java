@@ -97,35 +97,40 @@ public class AlgebraListener extends AlgebraGrammarBaseListener{
 
     @Override
     public void exitSHORTEST(AlgebraGrammarParser.SHORTESTContext ctx) {
-        atree.setOutterRestrictor(ctx.getText());
+        if (ctx.getParent().getParent() == null)
+            atree.setOutterRestrictor(ctx.getText());
     }
 
    
 
     @Override
     public void exitACYCLIC(AlgebraGrammarParser.ACYCLICContext ctx) {
-       atree.setOutterRestrictor(ctx.getText());
+       if (ctx.getParent().getParent() == null)
+        atree.setOutterRestrictor(ctx.getText());
     }
 
     
 
     @Override
     public void exitTRAIL(AlgebraGrammarParser.TRAILContext ctx) {
-        atree.setOutterRestrictor(ctx.getText());
+        if (ctx.getParent().getParent() == null)
+            atree.setOutterRestrictor(ctx.getText());
     }
 
    
 
     @Override
     public void exitSIMPLE(AlgebraGrammarParser.SIMPLEContext ctx) {
-        atree.setOutterRestrictor(ctx.getText());
+        if (ctx.getParent().getParent() == null)
+            atree.setOutterRestrictor(ctx.getText());
     }
 
     
 
     @Override
     public void exitWALK(AlgebraGrammarParser.WALKContext ctx) {
-        atree.setOutterRestrictor(ctx.getText());
+        if (ctx.getParent().getParent() == null)
+            atree.setOutterRestrictor(ctx.getText());
     }
 
     
@@ -152,6 +157,22 @@ public class AlgebraListener extends AlgebraGrammarBaseListener{
     public void exitPARTITIONGROUP(AlgebraGrammarParser.PARTITIONGROUPContext ctx) {
         atree.setOrderby("Partition Group");
     }
+
+    @Override
+    public void exitPARTITIONGROUPPATH(AlgebraGrammarParser.PARTITIONGROUPPATHContext ctx) {
+        atree.setOrderby("Partition Group Path");
+    }
+
+    @Override
+    public void exitGROUPPATH(AlgebraGrammarParser.GROUPPATHContext ctx) {
+        atree.setOrderby("Group Path");
+    }
+
+    @Override
+    public void exitPARTITIONPATH(AlgebraGrammarParser.PARTITIONPATHContext ctx) {
+        atree.setOrderby("Partition Path");
+    }
+    
     
     
     
@@ -340,10 +361,14 @@ public class AlgebraListener extends AlgebraGrammarBaseListener{
   
     @Override
     public void exitPlus(AlgebraGrammarParser.PlusContext ctx) {
-        String selector = null;
+        String restrictor = null;
         if (ctx.getChildCount()>2)
-            selector= ctx.getChild(2).getChild(1).getText();
-         stack.push(new OneOrMoreExpression(stack.pop(),selector));
+            restrictor= ctx.getChild(2).getChild(1).getText();
+        else if (atree.getOutterRestrictor().isBlank())
+            restrictor = "WALK";
+        else
+            restrictor = atree.getOutterRestrictor();
+         stack.push(new OneOrMoreExpression(stack.pop(),restrictor));
     }
 
     
@@ -390,12 +415,16 @@ public class AlgebraListener extends AlgebraGrammarBaseListener{
 
     @Override
     public void exitStar(AlgebraGrammarParser.StarContext ctx) {
-        String selector = null;
+        String restrictor = null;
         if (ctx.getChildCount()>2)
-            selector= ctx.getChild(2).getChild(1).getText();
+            restrictor= ctx.getChild(2).getChild(1).getText();
+        else if (atree.getOutterRestrictor().isBlank())
+            restrictor = "WALK";
+        else
+            restrictor = atree.getOutterRestrictor();
         
         RPQExpression right = new LabelExpression("Sn");
-        RPQExpression left = new OneOrMoreExpression(stack.pop(),selector);
+        RPQExpression left = new OneOrMoreExpression(stack.pop(),restrictor);
         
         stack.push(new AlternationPathExpression(left,right));
         
