@@ -2,7 +2,7 @@ grammar AlgebraGrammar;
 
 query           :   'MATCH' selector restrictor? pathPattern groupby? orderby?  EOF;
 pathPattern     :   pathName '=' nodePattern edgePattern nodePattern ('WHERE' complexCondition)? ;
-nodePattern     :   '('var? label?')';
+nodePattern     :   '('var?')';
 edgePattern     :   '-['rpq?']->' | '<-['rpq?']' | '~['rpq?']~';
 selector        :   partitionSelector groupSelector pathSelector;
 partitionSelector : 'ALL' 'PARTITIONS' | number 'PARTITIONS';
