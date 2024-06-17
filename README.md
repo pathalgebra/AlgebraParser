@@ -62,7 +62,7 @@ selector          :   partitionSelector groupSelector pathSelector
 partitionSelector :   'ALL' 'PARTITIONS' | number 'PARTITIONS'
 groupSelector     :   'ALL' 'GROUPS' | number 'GROUPS'
 pathSelector      :   'ALL' 'PATHS' | number 'PATHS'
-restrictor        :   'WALK' | 'SIMPLE' | 'TRAIL' | 'ACYCLIC' | 'SHORTEST' 
+restrictor        :   'ARBITRARY' | 'SIMPLE' | 'TRAIL' | 'ACYCLIC' | 'SHORTEST' 
 orderby           :   'ORDER BY' orderbyoption;
 groupby           :   'GROUP BY' groupbyoption;
 orderbyoption     :   'PARTITION' | 'GROUP' | 'PATH'    
@@ -103,7 +103,7 @@ Group (groupbyoption)
 Query 1
 ```
 MATCH ALL PARTITIONS ALL GROUPS 1 PATHS 
-p = (?x)-[(:Likes|:Knows)*{WALK}]->(?y)  
+p = (?x)-[(:Likes|:Knows)*]->(?y)  
 GROUP BY TARGET ORDER BY GROUP
 ```
 
@@ -113,7 +113,7 @@ Projection (ALL PARTITIONS ALL GROUPS 1 PATHS)
 OrderBy (Group)
 Group (Target)
 -> Union
- -> Recursive Join (restrictor: WALK)
+ -> Recursive Join (restrictor: ARBYTRARY)
   -> Union
    -> Select: (label(edge(1)) = Likes , Se)
    -> Select: (label(edge(1)) = Knows , Se)
