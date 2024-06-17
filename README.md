@@ -43,6 +43,14 @@ java - jar AlgebraParser-1.0-SNAPSHOT-jar-with-dependencies.jar
 [Using Algebra Parser](#project-parser)
 ================================================================================
 
+The basic pattern of a query is the following:
+```
+'MATCH' selector restrictor? pathPattern groupby? orderby?
+```
+Where selector, and pathPatter are mandatory, while the rest of the parameters are optional.
+
+The syntax of Algebra parser is described below. This syntax allows you to use each of the algebra operators, so it may differ from that exposed in SQL/PGQ.
+
 Syntax
 --------------------------------------------------------------------------------
 ```
