@@ -8,7 +8,7 @@ This process results in a query plan tree, which is displayed later in the comma
 Table of Contents
 ================================================================================
 - [Project Build](#project-build)
-- [Using Algebra Parser](#project-parser)
+- [Using](#project-parser)
 - [Example](#example)
 
 
@@ -40,7 +40,7 @@ java - jar AlgebraParser-1.0-SNAPSHOT-jar-with-dependencies.jar
 
 
 
-[Using Algebra Parser](#project-parser)
+[Using](#project-parser)
 ================================================================================
 
 The basic pattern of a query is the following:
@@ -105,9 +105,13 @@ Group (Target)
    -> Select: (label(edge(1)) = Knows , Se)
  -> Select: (Sn)
 ```
+
 Query 2 
 ```
-MATCH ALL PARTITIONS ALL GROUPS 1 PATHS TRAIL p = (?x)-[(:Likes|:Knows)* {SIMPLE} /(:Likes*|:Knows+)?]->(?y) WHERE  Property(first(p),name) = 'Apu' AND  Property(last(p),name) = 'Lisa' GROUP BY TARGET ORDER BY GROUP
+MATCH ALL PARTITIONS ALL GROUPS 1 PATHS TRAIL
+p = (?x)-[(:Likes|:Knows)* {SIMPLE} /(:Likes*|:Knows+)?]->(?y)
+WHERE  Property(first(p),name) = 'Apu' AND  Property(last(p),name) = 'Lisa'
+GROUP BY TARGET ORDER BY GROUP
 ```
 
 Output 2
