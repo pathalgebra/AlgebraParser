@@ -112,13 +112,13 @@ public class AlgebraGrammarBaseListener implements AlgebraGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterWALK(AlgebraGrammarParser.WALKContext ctx) { }
+	@Override public void enterARBITRARY(AlgebraGrammarParser.ARBITRARYContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitWALK(AlgebraGrammarParser.WALKContext ctx) { }
+	@Override public void exitARBITRARY(AlgebraGrammarParser.ARBITRARYContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -9,7 +9,7 @@ partitionSelector : 'ALL' 'PARTITIONS' | number 'PARTITIONS';
 groupSelector   :   'ALL' 'GROUPS' | number 'GROUPS';
 pathSelector    :   'ALL' 'PATHS' | number 'PATHS';
 
-restrictor      :   'WALK' # WALK| 'SIMPLE' # SIMPLE| 'TRAIL' # TRAIL| 'ACYCLIC' # ACYCLIC| 'SHORTEST' # SHORTEST;
+restrictor      :   'ARBITRARY' # ARBITRARY| 'SIMPLE' # SIMPLE| 'TRAIL' # TRAIL| 'ACYCLIC' # ACYCLIC| 'SHORTEST' # SHORTEST;
 orderby         :   'ORDER BY' orderbyoption;
 groupby         :   'GROUP BY' groupbyoption;
 orderbyoption   :   'PARTITION' # PARTITION

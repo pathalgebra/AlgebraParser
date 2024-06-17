@@ -59,12 +59,12 @@ public interface AlgebraGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitPathSelector(AlgebraGrammarParser.PathSelectorContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code WALK}
+	 * Visit a parse tree produced by the {@code ARBITRARY}
 	 * labeled alternative in {@link AlgebraGrammarParser#restrictor}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitWALK(AlgebraGrammarParser.WALKContext ctx);
+	T visitARBITRARY(AlgebraGrammarParser.ARBITRARYContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code SIMPLE}
 	 * labeled alternative in {@link AlgebraGrammarParser#restrictor}.

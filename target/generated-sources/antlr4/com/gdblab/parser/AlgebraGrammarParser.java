@@ -44,7 +44,7 @@ public class AlgebraGrammarParser extends Parser {
 	private static final String[] _LITERAL_NAMES = {
 		null, "'MATCH'", "'='", "'WHERE'", "'('", "')'", "'-['", "']->'", "'<-['", 
 		"']'", "'~['", "']~'", "'ALL'", "'PARTITIONS'", "'GROUPS'", "'PATHS'", 
-		"'WALK'", "'SIMPLE'", "'TRAIL'", "'ACYCLIC'", "'SHORTEST'", "'ORDER BY'", 
+		"'ARBITRARY'", "'SIMPLE'", "'TRAIL'", "'ACYCLIC'", "'SHORTEST'", "'ORDER BY'", 
 		"'GROUP BY'", "'PARTITION'", "'GROUP'", "'PATH'", "'PARTITION GROUP'", 
 		"'PARTITION PATH'", "'GROUP PATH'", "'PARTITION GROUP PATH'", "'SOURCE'", 
 		"'TARGET'", "'LENGTH'", "'SOURCE TARGET'", "'SOURCE LENGTH'", "'TARGET LENGTH'", 
@@ -694,19 +694,19 @@ public class AlgebraGrammarParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
-	public static class WALKContext extends RestrictorContext {
-		public WALKContext(RestrictorContext ctx) { copyFrom(ctx); }
+	public static class ARBITRARYContext extends RestrictorContext {
+		public ARBITRARYContext(RestrictorContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof AlgebraGrammarListener ) ((AlgebraGrammarListener)listener).enterWALK(this);
+			if ( listener instanceof AlgebraGrammarListener ) ((AlgebraGrammarListener)listener).enterARBITRARY(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof AlgebraGrammarListener ) ((AlgebraGrammarListener)listener).exitWALK(this);
+			if ( listener instanceof AlgebraGrammarListener ) ((AlgebraGrammarListener)listener).exitARBITRARY(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof AlgebraGrammarVisitor ) return ((AlgebraGrammarVisitor<? extends T>)visitor).visitWALK(this);
+			if ( visitor instanceof AlgebraGrammarVisitor ) return ((AlgebraGrammarVisitor<? extends T>)visitor).visitARBITRARY(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -783,7 +783,7 @@ public class AlgebraGrammarParser extends Parser {
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__15:
-				_localctx = new WALKContext(_localctx);
+				_localctx = new ARBITRARYContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(123);

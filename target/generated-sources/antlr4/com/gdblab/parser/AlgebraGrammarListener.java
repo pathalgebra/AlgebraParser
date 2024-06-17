@@ -88,17 +88,17 @@ public interface AlgebraGrammarListener extends ParseTreeListener {
 	 */
 	void exitPathSelector(AlgebraGrammarParser.PathSelectorContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code WALK}
+	 * Enter a parse tree produced by the {@code ARBITRARY}
 	 * labeled alternative in {@link AlgebraGrammarParser#restrictor}.
 	 * @param ctx the parse tree
 	 */
-	void enterWALK(AlgebraGrammarParser.WALKContext ctx);
+	void enterARBITRARY(AlgebraGrammarParser.ARBITRARYContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code WALK}
+	 * Exit a parse tree produced by the {@code ARBITRARY}
 	 * labeled alternative in {@link AlgebraGrammarParser#restrictor}.
 	 * @param ctx the parse tree
 	 */
-	void exitWALK(AlgebraGrammarParser.WALKContext ctx);
+	void exitARBITRARY(AlgebraGrammarParser.ARBITRARYContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code SIMPLE}
 	 * labeled alternative in {@link AlgebraGrammarParser#restrictor}.

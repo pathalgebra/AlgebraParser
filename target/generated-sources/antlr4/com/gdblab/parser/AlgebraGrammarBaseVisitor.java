@@ -73,7 +73,7 @@ public class AlgebraGrammarBaseVisitor<T> extends AbstractParseTreeVisitor<T> im
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitWALK(AlgebraGrammarParser.WALKContext ctx) { return visitChildren(ctx); }
+	@Override public T visitARBITRARY(AlgebraGrammarParser.ARBITRARYContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

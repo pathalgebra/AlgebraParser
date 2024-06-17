@@ -128,7 +128,7 @@ public class AlgebraListener extends AlgebraGrammarBaseListener{
     
 
     @Override
-    public void exitWALK(AlgebraGrammarParser.WALKContext ctx) {
+    public void exitARBITRARY(AlgebraGrammarParser.ARBITRARYContext ctx) {
         if (ctx.getParent().getParent() == null)
             atree.setOutterRestrictor(ctx.getText());
     }
@@ -365,7 +365,7 @@ public class AlgebraListener extends AlgebraGrammarBaseListener{
         if (ctx.getChildCount()>2)
             restrictor= ctx.getChild(2).getChild(1).getText();
         else if (atree.getOutterRestrictor().isBlank())
-            restrictor = "WALK";
+            restrictor = "ARBITRARY";
         else
             restrictor = atree.getOutterRestrictor();
          stack.push(new OneOrMoreExpression(stack.pop(),restrictor));
@@ -419,7 +419,7 @@ public class AlgebraListener extends AlgebraGrammarBaseListener{
         if (ctx.getChildCount()>2)
             restrictor= ctx.getChild(2).getChild(1).getText();
         else if (atree.getOutterRestrictor().isBlank())
-            restrictor = "WALK";
+            restrictor = "ARBITRARY";
         else
             restrictor = atree.getOutterRestrictor();
         

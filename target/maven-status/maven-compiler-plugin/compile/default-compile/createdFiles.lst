@@ -65,8 +65,8 @@ com\gdblab\parser\impl\Node.class
 com\gdblab\parser\impl\LabelExpression.class
 com\gdblab\parser\impl\RPQExpression.class
 com\gdblab\parser\AlgebraGrammarParser$AttributeContext.class
-com\gdblab\parser\AlgebraGrammarParser$WALKContext.class
 com\gdblab\parser\AlgebraGrammarParser$AlternationContext.class
+com\gdblab\parser\AlgebraGrammarParser$ARBITRARYContext.class
 com\gdblab\parser\AlgebraGrammarListener.class
 com\gdblab\parser\impl\NullaryRPQExpression.class
 com\gdblab\parser\AlgebraGrammarParser$RpqrestrictorContext.class
