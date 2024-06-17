@@ -8,13 +8,13 @@ This process results in a query plan tree, which is displayed later in the comma
 Table of Contents
 ================================================================================
 - [Project Build](#project-build)
-- [Using The Project](#using)
+- [Using The Project](#using-the-project)
 - [Example](#example)
 
 
 
 
-[Project build](#project-build)
+[Project build](#algebra-parser)
 ================================================================================
 Algebra Parser should be able to work on any computer that supports Java 17. If you use another Java version, you have to edit the pom.xml file with the dessired version. 
 
@@ -40,7 +40,7 @@ java - jar AlgebraParser-1.0-SNAPSHOT-jar-with-dependencies.jar
 
 
 
-[Using The Project](#using)
+[Using The Project](#algebra-parser)
 ================================================================================
 
 The basic pattern of a query is the following:
@@ -97,7 +97,7 @@ Group (groupbyoption)
     ...
 ```
 
-[Example](#example)
+[Example](#algebra-parser)
 ================================================================================
 
 Query 1
