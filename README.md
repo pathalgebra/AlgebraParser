@@ -8,7 +8,7 @@ This process results in a query plan tree, which is displayed later in the comma
 Table of Contents
 ================================================================================
 - [Project Build](#project-build)
-- [Using](#project-parser)
+- [Using The Project](#using)
 - [Example](#example)
 
 
@@ -40,7 +40,7 @@ java - jar AlgebraParser-1.0-SNAPSHOT-jar-with-dependencies.jar
 
 
 
-[Using](#project-parser)
+[Using The Project](#using)
 ================================================================================
 
 The basic pattern of a query is the following:
@@ -83,6 +83,20 @@ boolOp            :   'AND' | 'OR';
 
 ```
 
+When you put a valid query into the parser and then press Enter, the parser returns the query plan. The query plan can have the following structure (depending on the query).
+
+```
+Projection (selector)
+OrderBy (orderbyoption)
+Group (groupbyoption)
+-> Union
+ -> Recursive Join (restrictor)
+  -> Union
+    ...
+   -> Select: (complexCondition , Path set)
+    ...
+```
+
 [Example](#example)
 ================================================================================
 
@@ -93,7 +107,7 @@ p = (?x)-[(:Likes|:Knows)*{WALK}]->(?y)
 GROUP BY TARGET ORDER BY GROUP
 ```
 
-Output 1
+Query Plan 1
 ```
 Projection (ALL PARTITIONS ALL GROUPS 1 PATHS)
 OrderBy (Group)
@@ -114,7 +128,7 @@ WHERE  Property(first(p),name) = 'Apu' AND  Property(last(p),name) = 'Lisa'
 GROUP BY TARGET ORDER BY GROUP
 ```
 
-Output 2
+Query Plan 2
 ```
 Projection (ALL PARTITIONS ALL GROUPS 1 PATHS)
 OrderBy (Group)
