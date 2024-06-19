@@ -115,9 +115,9 @@ Group (Target)
 -> Union
  -> Recursive Join (restrictor: ARBYTRARY)
   -> Union
-   -> Select: (label(edge(1)) = Likes , Se)
-   -> Select: (label(edge(1)) = Knows , Se)
- -> Select: (Sn)
+   -> Select: (label(edge(1)) = Likes , EDGES(G))
+   -> Select: (label(edge(1)) = Knows , EDGES(G))
+ -> Select: (NODES(G))
 ```
 
 Query 2 
@@ -139,16 +139,16 @@ Restrictor (TRAIL)
   -> Union
    -> Recursive Join (restrictor: SIMPLE)
     -> Union
-     -> Select: (label(edge(1)) = Likes , Se)
-     -> Select: (label(edge(1)) = Knows , Se)
-   -> Select: (Sn)
+     -> Select: (label(edge(1)) = Likes , EDGES(G))
+     -> Select: (label(edge(1)) = Knows , EDGES(G))
+   -> Select: (NODES(G))
   -> Union
    -> Union
     -> Union
      -> Recursive Join (restrictor: TRAIL)
-      -> Select: (label(edge(1)) = Likes , Se)
+      -> Select: (label(edge(1)) = Likes , EDGES(G))
      -> Select: (Sn)
     -> Recursive Join (restrictor: TRAIL)
-     -> Select: (label(edge(1)) = Knows , Se)
-   -> Select: (Sn)
+     -> Select: (label(edge(1)) = Knows , EDGES(G))
+   -> Select: (NODES(G))
 ```
