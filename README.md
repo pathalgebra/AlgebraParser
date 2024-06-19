@@ -147,7 +147,7 @@ Restrictor (TRAIL)
     -> Union
      -> Recursive Join (restrictor: TRAIL)
       -> Select: (label(edge(1)) = Likes , EDGES(G))
-     -> Select: (Sn)
+     -> Select: (NODES(G))
     -> Recursive Join (restrictor: TRAIL)
      -> Select: (label(edge(1)) = Knows , EDGES(G))
    -> Select: (NODES(G))
