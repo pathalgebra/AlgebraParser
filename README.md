@@ -119,7 +119,7 @@ Group (Target)
    -> Select: (label(edge(1)) = Knows , EDGES(G))
  -> Select: (NODES(G))
 ```
-
+--------------------------------------------------------------------------------
 Query 2 
 ```
 MATCH ALL PARTITIONS ALL GROUPS 1 PATHS TRAIL
