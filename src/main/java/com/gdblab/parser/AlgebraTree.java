@@ -148,11 +148,11 @@ public class AlgebraTree {
     public void visit(LabelExpression exp,int deep){
         String text;
         if(exp.getLabel().equals("Sn"))
-            text = "Select: (Sn)";
+            text = "Select: (NODES(G))";
         else if (exp.getLabel().length()==0)
-            text = "Select: (Se)";
+            text = "Select: (EDGES(G))";
         else
-            text = "Select: (label(edge(1)) = " +exp.getLabel().replace(":", "")+" , Se)";
+            text = "Select: (label(edge(1)) = " +exp.getLabel().replace(":", "")+" , EDGES(G))";
         printDeepness(deep,text);
     }
     
