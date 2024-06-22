@@ -172,6 +172,11 @@ public class AlgebraListener extends AlgebraGrammarBaseListener{
     public void exitPARTITIONPATH(AlgebraGrammarParser.PARTITIONPATHContext ctx) {
         atree.setOrderby("Partition Path");
     }
+
+    @Override
+    public void exitPATH(AlgebraGrammarParser.PATHContext ctx) {
+        atree.setOrderby("Path");
+    }
     
     
     
