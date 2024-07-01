@@ -8,142 +8,112 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface AlgebraGrammarListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link AlgebraGrammarParser#query}.
+	 * Enter a parse tree produced by {@link AlgebraGrammarParser#pathQuery}.
 	 * @param ctx the parse tree
 	 */
-	void enterQuery(AlgebraGrammarParser.QueryContext ctx);
+	void enterPathQuery(AlgebraGrammarParser.PathQueryContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link AlgebraGrammarParser#query}.
+	 * Exit a parse tree produced by {@link AlgebraGrammarParser#pathQuery}.
 	 * @param ctx the parse tree
 	 */
-	void exitQuery(AlgebraGrammarParser.QueryContext ctx);
+	void exitPathQuery(AlgebraGrammarParser.PathQueryContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link AlgebraGrammarParser#pathPattern}.
+	 * Enter a parse tree produced by {@link AlgebraGrammarParser#projection}.
 	 * @param ctx the parse tree
 	 */
-	void enterPathPattern(AlgebraGrammarParser.PathPatternContext ctx);
+	void enterProjection(AlgebraGrammarParser.ProjectionContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link AlgebraGrammarParser#pathPattern}.
+	 * Exit a parse tree produced by {@link AlgebraGrammarParser#projection}.
 	 * @param ctx the parse tree
 	 */
-	void exitPathPattern(AlgebraGrammarParser.PathPatternContext ctx);
+	void exitProjection(AlgebraGrammarParser.ProjectionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link AlgebraGrammarParser#nodePattern}.
+	 * Enter a parse tree produced by {@link AlgebraGrammarParser#partProj}.
 	 * @param ctx the parse tree
 	 */
-	void enterNodePattern(AlgebraGrammarParser.NodePatternContext ctx);
+	void enterPartProj(AlgebraGrammarParser.PartProjContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link AlgebraGrammarParser#nodePattern}.
+	 * Exit a parse tree produced by {@link AlgebraGrammarParser#partProj}.
 	 * @param ctx the parse tree
 	 */
-	void exitNodePattern(AlgebraGrammarParser.NodePatternContext ctx);
+	void exitPartProj(AlgebraGrammarParser.PartProjContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link AlgebraGrammarParser#edgePattern}.
+	 * Enter a parse tree produced by {@link AlgebraGrammarParser#groupProj}.
 	 * @param ctx the parse tree
 	 */
-	void enterEdgePattern(AlgebraGrammarParser.EdgePatternContext ctx);
+	void enterGroupProj(AlgebraGrammarParser.GroupProjContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link AlgebraGrammarParser#edgePattern}.
+	 * Exit a parse tree produced by {@link AlgebraGrammarParser#groupProj}.
 	 * @param ctx the parse tree
 	 */
-	void exitEdgePattern(AlgebraGrammarParser.EdgePatternContext ctx);
+	void exitGroupProj(AlgebraGrammarParser.GroupProjContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link AlgebraGrammarParser#selector}.
+	 * Enter a parse tree produced by {@link AlgebraGrammarParser#pathProj}.
 	 * @param ctx the parse tree
 	 */
-	void enterSelector(AlgebraGrammarParser.SelectorContext ctx);
+	void enterPathProj(AlgebraGrammarParser.PathProjContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link AlgebraGrammarParser#selector}.
+	 * Exit a parse tree produced by {@link AlgebraGrammarParser#pathProj}.
 	 * @param ctx the parse tree
 	 */
-	void exitSelector(AlgebraGrammarParser.SelectorContext ctx);
+	void exitPathProj(AlgebraGrammarParser.PathProjContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link AlgebraGrammarParser#partitionSelector}.
+	 * Enter a parse tree produced by the {@code WALK}
+	 * labeled alternative in {@link AlgebraGrammarParser#restrictor_ext}.
 	 * @param ctx the parse tree
 	 */
-	void enterPartitionSelector(AlgebraGrammarParser.PartitionSelectorContext ctx);
+	void enterWALK(AlgebraGrammarParser.WALKContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link AlgebraGrammarParser#partitionSelector}.
+	 * Exit a parse tree produced by the {@code WALK}
+	 * labeled alternative in {@link AlgebraGrammarParser#restrictor_ext}.
 	 * @param ctx the parse tree
 	 */
-	void exitPartitionSelector(AlgebraGrammarParser.PartitionSelectorContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link AlgebraGrammarParser#groupSelector}.
-	 * @param ctx the parse tree
-	 */
-	void enterGroupSelector(AlgebraGrammarParser.GroupSelectorContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link AlgebraGrammarParser#groupSelector}.
-	 * @param ctx the parse tree
-	 */
-	void exitGroupSelector(AlgebraGrammarParser.GroupSelectorContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link AlgebraGrammarParser#pathSelector}.
-	 * @param ctx the parse tree
-	 */
-	void enterPathSelector(AlgebraGrammarParser.PathSelectorContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link AlgebraGrammarParser#pathSelector}.
-	 * @param ctx the parse tree
-	 */
-	void exitPathSelector(AlgebraGrammarParser.PathSelectorContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code ARBITRARY}
-	 * labeled alternative in {@link AlgebraGrammarParser#restrictor}.
-	 * @param ctx the parse tree
-	 */
-	void enterARBITRARY(AlgebraGrammarParser.ARBITRARYContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code ARBITRARY}
-	 * labeled alternative in {@link AlgebraGrammarParser#restrictor}.
-	 * @param ctx the parse tree
-	 */
-	void exitARBITRARY(AlgebraGrammarParser.ARBITRARYContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code SIMPLE}
-	 * labeled alternative in {@link AlgebraGrammarParser#restrictor}.
-	 * @param ctx the parse tree
-	 */
-	void enterSIMPLE(AlgebraGrammarParser.SIMPLEContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code SIMPLE}
-	 * labeled alternative in {@link AlgebraGrammarParser#restrictor}.
-	 * @param ctx the parse tree
-	 */
-	void exitSIMPLE(AlgebraGrammarParser.SIMPLEContext ctx);
+	void exitWALK(AlgebraGrammarParser.WALKContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code TRAIL}
-	 * labeled alternative in {@link AlgebraGrammarParser#restrictor}.
+	 * labeled alternative in {@link AlgebraGrammarParser#restrictor_ext}.
 	 * @param ctx the parse tree
 	 */
 	void enterTRAIL(AlgebraGrammarParser.TRAILContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code TRAIL}
-	 * labeled alternative in {@link AlgebraGrammarParser#restrictor}.
+	 * labeled alternative in {@link AlgebraGrammarParser#restrictor_ext}.
 	 * @param ctx the parse tree
 	 */
 	void exitTRAIL(AlgebraGrammarParser.TRAILContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code SIMPLE}
+	 * labeled alternative in {@link AlgebraGrammarParser#restrictor_ext}.
+	 * @param ctx the parse tree
+	 */
+	void enterSIMPLE(AlgebraGrammarParser.SIMPLEContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code SIMPLE}
+	 * labeled alternative in {@link AlgebraGrammarParser#restrictor_ext}.
+	 * @param ctx the parse tree
+	 */
+	void exitSIMPLE(AlgebraGrammarParser.SIMPLEContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code ACYCLIC}
-	 * labeled alternative in {@link AlgebraGrammarParser#restrictor}.
+	 * labeled alternative in {@link AlgebraGrammarParser#restrictor_ext}.
 	 * @param ctx the parse tree
 	 */
 	void enterACYCLIC(AlgebraGrammarParser.ACYCLICContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code ACYCLIC}
-	 * labeled alternative in {@link AlgebraGrammarParser#restrictor}.
+	 * labeled alternative in {@link AlgebraGrammarParser#restrictor_ext}.
 	 * @param ctx the parse tree
 	 */
 	void exitACYCLIC(AlgebraGrammarParser.ACYCLICContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code SHORTEST}
-	 * labeled alternative in {@link AlgebraGrammarParser#restrictor}.
+	 * labeled alternative in {@link AlgebraGrammarParser#restrictor_ext}.
 	 * @param ctx the parse tree
 	 */
 	void enterSHORTEST(AlgebraGrammarParser.SHORTESTContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code SHORTEST}
-	 * labeled alternative in {@link AlgebraGrammarParser#restrictor}.
+	 * labeled alternative in {@link AlgebraGrammarParser#restrictor_ext}.
 	 * @param ctx the parse tree
 	 */
 	void exitSHORTEST(AlgebraGrammarParser.SHORTESTContext ctx);
@@ -335,6 +305,36 @@ public interface AlgebraGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitSOURCETARGETLENGTH(AlgebraGrammarParser.SOURCETARGETLENGTHContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link AlgebraGrammarParser#pathPattern}.
+	 * @param ctx the parse tree
+	 */
+	void enterPathPattern(AlgebraGrammarParser.PathPatternContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AlgebraGrammarParser#pathPattern}.
+	 * @param ctx the parse tree
+	 */
+	void exitPathPattern(AlgebraGrammarParser.PathPatternContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link AlgebraGrammarParser#nodePattern}.
+	 * @param ctx the parse tree
+	 */
+	void enterNodePattern(AlgebraGrammarParser.NodePatternContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AlgebraGrammarParser#nodePattern}.
+	 * @param ctx the parse tree
+	 */
+	void exitNodePattern(AlgebraGrammarParser.NodePatternContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link AlgebraGrammarParser#edgePattern}.
+	 * @param ctx the parse tree
+	 */
+	void enterEdgePattern(AlgebraGrammarParser.EdgePatternContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AlgebraGrammarParser#edgePattern}.
+	 * @param ctx the parse tree
+	 */
+	void exitEdgePattern(AlgebraGrammarParser.EdgePatternContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code negated}
 	 * labeled alternative in {@link AlgebraGrammarParser#rpq}.

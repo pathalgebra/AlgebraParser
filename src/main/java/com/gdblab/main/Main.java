@@ -52,7 +52,7 @@ public class Main {
             parser.removeParseListeners();
             AlgebraListener aList = new AlgebraListener();
             parser.addParseListener(aList);
-            parser.query();
+            parser.pathQuery();
 
             if(aList.isFinished())
                 aList.getAlgebraTree().visit(aList.getRoot());

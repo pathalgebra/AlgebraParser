@@ -11,84 +11,66 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface AlgebraGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	/**
-	 * Visit a parse tree produced by {@link AlgebraGrammarParser#query}.
+	 * Visit a parse tree produced by {@link AlgebraGrammarParser#pathQuery}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitQuery(AlgebraGrammarParser.QueryContext ctx);
+	T visitPathQuery(AlgebraGrammarParser.PathQueryContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link AlgebraGrammarParser#pathPattern}.
+	 * Visit a parse tree produced by {@link AlgebraGrammarParser#projection}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitPathPattern(AlgebraGrammarParser.PathPatternContext ctx);
+	T visitProjection(AlgebraGrammarParser.ProjectionContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link AlgebraGrammarParser#nodePattern}.
+	 * Visit a parse tree produced by {@link AlgebraGrammarParser#partProj}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitNodePattern(AlgebraGrammarParser.NodePatternContext ctx);
+	T visitPartProj(AlgebraGrammarParser.PartProjContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link AlgebraGrammarParser#edgePattern}.
+	 * Visit a parse tree produced by {@link AlgebraGrammarParser#groupProj}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitEdgePattern(AlgebraGrammarParser.EdgePatternContext ctx);
+	T visitGroupProj(AlgebraGrammarParser.GroupProjContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link AlgebraGrammarParser#selector}.
+	 * Visit a parse tree produced by {@link AlgebraGrammarParser#pathProj}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSelector(AlgebraGrammarParser.SelectorContext ctx);
+	T visitPathProj(AlgebraGrammarParser.PathProjContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link AlgebraGrammarParser#partitionSelector}.
+	 * Visit a parse tree produced by the {@code WALK}
+	 * labeled alternative in {@link AlgebraGrammarParser#restrictor_ext}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitPartitionSelector(AlgebraGrammarParser.PartitionSelectorContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link AlgebraGrammarParser#groupSelector}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitGroupSelector(AlgebraGrammarParser.GroupSelectorContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link AlgebraGrammarParser#pathSelector}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitPathSelector(AlgebraGrammarParser.PathSelectorContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code ARBITRARY}
-	 * labeled alternative in {@link AlgebraGrammarParser#restrictor}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitARBITRARY(AlgebraGrammarParser.ARBITRARYContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code SIMPLE}
-	 * labeled alternative in {@link AlgebraGrammarParser#restrictor}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSIMPLE(AlgebraGrammarParser.SIMPLEContext ctx);
+	T visitWALK(AlgebraGrammarParser.WALKContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code TRAIL}
-	 * labeled alternative in {@link AlgebraGrammarParser#restrictor}.
+	 * labeled alternative in {@link AlgebraGrammarParser#restrictor_ext}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitTRAIL(AlgebraGrammarParser.TRAILContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code SIMPLE}
+	 * labeled alternative in {@link AlgebraGrammarParser#restrictor_ext}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSIMPLE(AlgebraGrammarParser.SIMPLEContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code ACYCLIC}
-	 * labeled alternative in {@link AlgebraGrammarParser#restrictor}.
+	 * labeled alternative in {@link AlgebraGrammarParser#restrictor_ext}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitACYCLIC(AlgebraGrammarParser.ACYCLICContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code SHORTEST}
-	 * labeled alternative in {@link AlgebraGrammarParser#restrictor}.
+	 * labeled alternative in {@link AlgebraGrammarParser#restrictor_ext}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
@@ -203,6 +185,24 @@ public interface AlgebraGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitSOURCETARGETLENGTH(AlgebraGrammarParser.SOURCETARGETLENGTHContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link AlgebraGrammarParser#pathPattern}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPathPattern(AlgebraGrammarParser.PathPatternContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link AlgebraGrammarParser#nodePattern}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNodePattern(AlgebraGrammarParser.NodePatternContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link AlgebraGrammarParser#edgePattern}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitEdgePattern(AlgebraGrammarParser.EdgePatternContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code negated}
 	 * labeled alternative in {@link AlgebraGrammarParser#rpq}.

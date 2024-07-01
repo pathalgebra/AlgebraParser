@@ -1,15 +1,11 @@
 grammar AlgebraGrammar;
 
-query           :   'MATCH' selector restrictor? pathPattern groupby? orderby?  EOF;
-pathPattern     :   pathName '=' nodePattern edgePattern nodePattern ('WHERE' complexCondition)? ;
-nodePattern     :   '('var?')';
-edgePattern     :   '-['rpq?']->' | '<-['rpq?']' | '~['rpq?']~';
-selector        :   partitionSelector groupSelector pathSelector;
-partitionSelector : 'ALL' 'PARTITIONS' | number 'PARTITIONS';
-groupSelector   :   'ALL' 'GROUPS' | number 'GROUPS';
-pathSelector    :   'ALL' 'PATHS' | number 'PATHS';
-
-restrictor      :   'ARBITRARY' # ARBITRARY| 'SIMPLE' # SIMPLE| 'TRAIL' # TRAIL| 'ACYCLIC' # ACYCLIC| 'SHORTEST' # SHORTEST;
+pathQuery       :   'MATCH' projection restrictor_ext? pathPattern groupby? orderby?  EOF;
+projection      :   partProj groupProj pathProj;
+partProj        :   'ALL' 'PARTITIONS' | number 'PARTITIONS';
+groupProj       :   'ALL' 'GROUPS' | number 'GROUPS';
+pathProj        :   'ALL' 'PATHS' | number 'PATHS';
+restrictor_ext  :   'WALK' # WALK | 'TRAIL' # TRAIL| 'SIMPLE' # SIMPLE| 'ACYCLIC' # ACYCLIC| 'SHORTEST' # SHORTEST;
 orderby         :   'ORDER BY' orderbyoption;
 groupby         :   'GROUP BY' groupbyoption;
 orderbyoption   :   'PARTITION' # PARTITION
@@ -26,6 +22,11 @@ groupbyoption   :   'SOURCE' # SOURCE
                 |   'SOURCE LENGTH' # SOURCELENGTH
                 |   'TARGET LENGTH' # TARGETLENGTH
                 |   'SOURCE TARGET LENGTH'# SOURCETARGETLENGTH;
+pathPattern     :   pathName '=' nodePattern edgePattern nodePattern ('WHERE' complexCondition)? ;
+nodePattern     :   '('var?')';
+edgePattern     :   '-['rpq?']->' | '<-['rpq?']' | '~['rpq?']~';
+
+
 rpq             : '(' rpq ')'  # parenthesis
                 | label     # lbl
                 | '!' label # negated
@@ -37,7 +38,7 @@ rpq             : '(' rpq ')'  # parenthesis
                 | rpq '|' rpq # alternation
                 
                 ;
-rpqrestrictor   : '{'restrictor'}';
+rpqrestrictor   : '{'restrictor_ext'}';
 var             :   '?'LETTER ( LETTER | DIGIT)*;
 pathName        :   LETTER ( LETTER | DIGIT)*;
 attribute       :   LETTER+;

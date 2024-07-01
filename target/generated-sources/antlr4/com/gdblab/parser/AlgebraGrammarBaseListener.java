@@ -16,121 +16,73 @@ public class AlgebraGrammarBaseListener implements AlgebraGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterQuery(AlgebraGrammarParser.QueryContext ctx) { }
+	@Override public void enterPathQuery(AlgebraGrammarParser.PathQueryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitQuery(AlgebraGrammarParser.QueryContext ctx) { }
+	@Override public void exitPathQuery(AlgebraGrammarParser.PathQueryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPathPattern(AlgebraGrammarParser.PathPatternContext ctx) { }
+	@Override public void enterProjection(AlgebraGrammarParser.ProjectionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPathPattern(AlgebraGrammarParser.PathPatternContext ctx) { }
+	@Override public void exitProjection(AlgebraGrammarParser.ProjectionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNodePattern(AlgebraGrammarParser.NodePatternContext ctx) { }
+	@Override public void enterPartProj(AlgebraGrammarParser.PartProjContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNodePattern(AlgebraGrammarParser.NodePatternContext ctx) { }
+	@Override public void exitPartProj(AlgebraGrammarParser.PartProjContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEdgePattern(AlgebraGrammarParser.EdgePatternContext ctx) { }
+	@Override public void enterGroupProj(AlgebraGrammarParser.GroupProjContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitEdgePattern(AlgebraGrammarParser.EdgePatternContext ctx) { }
+	@Override public void exitGroupProj(AlgebraGrammarParser.GroupProjContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSelector(AlgebraGrammarParser.SelectorContext ctx) { }
+	@Override public void enterPathProj(AlgebraGrammarParser.PathProjContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSelector(AlgebraGrammarParser.SelectorContext ctx) { }
+	@Override public void exitPathProj(AlgebraGrammarParser.PathProjContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPartitionSelector(AlgebraGrammarParser.PartitionSelectorContext ctx) { }
+	@Override public void enterWALK(AlgebraGrammarParser.WALKContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPartitionSelector(AlgebraGrammarParser.PartitionSelectorContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterGroupSelector(AlgebraGrammarParser.GroupSelectorContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitGroupSelector(AlgebraGrammarParser.GroupSelectorContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterPathSelector(AlgebraGrammarParser.PathSelectorContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitPathSelector(AlgebraGrammarParser.PathSelectorContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterARBITRARY(AlgebraGrammarParser.ARBITRARYContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitARBITRARY(AlgebraGrammarParser.ARBITRARYContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterSIMPLE(AlgebraGrammarParser.SIMPLEContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitSIMPLE(AlgebraGrammarParser.SIMPLEContext ctx) { }
+	@Override public void exitWALK(AlgebraGrammarParser.WALKContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -143,6 +95,18 @@ public class AlgebraGrammarBaseListener implements AlgebraGrammarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitTRAIL(AlgebraGrammarParser.TRAILContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSIMPLE(AlgebraGrammarParser.SIMPLEContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSIMPLE(AlgebraGrammarParser.SIMPLEContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -359,6 +323,42 @@ public class AlgebraGrammarBaseListener implements AlgebraGrammarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitSOURCETARGETLENGTH(AlgebraGrammarParser.SOURCETARGETLENGTHContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterPathPattern(AlgebraGrammarParser.PathPatternContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPathPattern(AlgebraGrammarParser.PathPatternContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNodePattern(AlgebraGrammarParser.NodePatternContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNodePattern(AlgebraGrammarParser.NodePatternContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterEdgePattern(AlgebraGrammarParser.EdgePatternContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitEdgePattern(AlgebraGrammarParser.EdgePatternContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

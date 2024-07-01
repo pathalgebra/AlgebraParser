@@ -45,7 +45,7 @@ public class AlgebraTree {
         return selector;
     }
 
-    public void setSelector(String selector) {
+    public void setProjection(String selector) {
         this.selector = selector;
     }
 

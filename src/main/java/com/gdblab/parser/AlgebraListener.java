@@ -58,7 +58,7 @@ public class AlgebraListener extends AlgebraGrammarBaseListener{
         return finished;
     }
     
-    @Override public void exitQuery(AlgebraGrammarParser.QueryContext ctx) {
+    @Override public void exitPathQuery(AlgebraGrammarParser.PathQueryContext ctx) {
         if(!stack.isEmpty()){
             root = stack.pop();
             this.atree.setRoot(root);
@@ -78,14 +78,14 @@ public class AlgebraListener extends AlgebraGrammarBaseListener{
    
 
     @Override
-    public void exitSelector(AlgebraGrammarParser.SelectorContext ctx) {
-        String selector ="";
+    public void exitProjection(AlgebraGrammarParser.ProjectionContext ctx) {
+        String projection ="";
         for (int i = 0; i < ctx.getChildCount(); i++) {
             for (int j = 0; j < ctx.getChild(i).getChildCount(); j++) {
-                selector+= (" "+ctx.getChild(i).getChild(j).getText());
+                projection+= (" "+ctx.getChild(i).getChild(j).getText());
             }
         }
-        atree.setSelector(selector);
+        atree.setProjection(projection);
     }
     
     
@@ -128,7 +128,7 @@ public class AlgebraListener extends AlgebraGrammarBaseListener{
     
 
     @Override
-    public void exitARBITRARY(AlgebraGrammarParser.ARBITRARYContext ctx) {
+    public void exitWALK(AlgebraGrammarParser.WALKContext ctx) {
         if (ctx.getParent().getParent() == null)
             atree.setOutterRestrictor(ctx.getText());
     }
@@ -370,7 +370,7 @@ public class AlgebraListener extends AlgebraGrammarBaseListener{
         if (ctx.getChildCount()>2)
             restrictor= ctx.getChild(2).getChild(1).getText();
         else if (atree.getOutterRestrictor().isBlank())
-            restrictor = "ARBITRARY";
+            restrictor = "WALK";
         else
             restrictor = atree.getOutterRestrictor();
          stack.push(new OneOrMoreExpression(stack.pop(),restrictor));
@@ -424,7 +424,7 @@ public class AlgebraListener extends AlgebraGrammarBaseListener{
         if (ctx.getChildCount()>2)
             restrictor= ctx.getChild(2).getChild(1).getText();
         else if (atree.getOutterRestrictor().isBlank())
-            restrictor = "ARBITRARY";
+            restrictor = "WALK";
         else
             restrictor = atree.getOutterRestrictor();
         
