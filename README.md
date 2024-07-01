@@ -54,33 +54,29 @@ The syntax of Algebra parser is described below. This syntax allows you to use e
 Syntax
 --------------------------------------------------------------------------------
 ```
-query             :   'MATCH' selector restrictor? pathPattern groupby? orderby?
-pathPattern       :   pathName '=' nodePattern edgePattern nodePattern ('WHERE' complexCondition)? 
-nodePattern       :   '('var?')';
-edgePattern       :   '-['rpq?']->' | '<-['rpq?']' | '~['rpq?']~'
-selector          :   partitionSelector groupSelector pathSelector
-partitionSelector :   'ALL' 'PARTITIONS' | number 'PARTITIONS'
-groupSelector     :   'ALL' 'GROUPS' | number 'GROUPS'
-pathSelector      :   'ALL' 'PATHS' | number 'PATHS'
-restrictor        :   'ARBITRARY' | 'SIMPLE' | 'TRAIL' | 'ACYCLIC' | 'SHORTEST' 
-orderby           :   'ORDER BY' orderbyoption;
-groupby           :   'GROUP BY' groupbyoption;
-orderbyoption     :   'PARTITION' | 'GROUP' | 'PATH'    
-                  |   'PARTITION GROUP'  | 'PARTITION PATH' 
-                  |   'GROUP PATH' | 'PARTITION GROUP PATH' 
-groupbyoption     :   'SOURCE' | 'TARGET' | 'LENGTH' 
-                  |   'SOURCE TARGET' | 'SOURCE LENGTH'
-                  |   'TARGET LENGTH' | 'SOURCE TARGET LENGTH'
-rpq               :   '(' rpq ')'  | label | '!' label 
-                  |   label '^' | rpq '?'| rpq '+' rpqrestrictor? 
-                  |   rpq '*' rpqrestrictor? | rpq '/' rpq  |
-complexCondition  :   condition | condition boolOp complexCondition;
-condition         :   function compareSym '\''text'\'' ;
-compareSym        :   '=' | '!=' | '<' | '>' | '<=' | '>=';
-function          :   text'('text')' | text'('function')' |  text'('function','text')';
-boolOp            :   'AND' | 'OR';
-                       rpq '|' rpq 
-
+pathQuery       :   'MATCH' projection restrictor_ext? pathPattern groupby? orderby? 
+projection      :   partProj groupProj pathProj
+partProj        :   'ALL' 'PARTITIONS' | number 'PARTITIONS'
+groupProj       :   'ALL' 'GROUPS' | number 'GROUPS'
+pathProj        :   'ALL' 'PATHS' | number 'PATHS'
+restrictor_ext  :   'WALK'  | 'TRAIL' | 'SIMPLE' | 'ACYCLIC' | 'SHORTEST'
+orderby         :   'ORDER BY' orderbyoption
+groupby         :   'GROUP BY' groupbyoption
+orderbyoption   :   'PARTITION' | 'GROUP' | 'PATH' | 'PARTITION GROUP' 
+                |   'PARTITION PATH' | 'GROUP PATH'| 'PARTITION GROUP PATH' 
+groupbyoption   :   'SOURCE' | 'TARGET' | 'LENGTH' | 'SOURCE TARGET' 
+                |   'SOURCE LENGTH' | 'TARGET LENGTH' | 'SOURCE TARGET LENGTH'
+pathPattern     :   pathName '=' nodePattern edgePattern nodePattern ('WHERE' complexCondition)? 
+nodePattern     :   '('var?')'
+edgePattern     :   '-['rpq?']->' | '<-['rpq?']' | '~['rpq?']~'
+rpq             : '(' rpq ')' | label | '!' label | label '^' | rpq '?' | rpq '+' rpqrestrictor? 
+                | rpq '*' rpqrestrictor? | rpq '/' rpq | rpq '|' rpq 
+rpqrestrictor   : '{'restrictor_ext'}'
+complexCondition:   condition | condition boolOp complexCondition
+condition       :   function compareSym '\''text'\'' 
+compareSym      :   '=' | '!=' | '<' | '>' | '<=' | '>='
+function        :   text'('text')' | text'('function')' |  text'('function','text')'
+boolOp          :   'AND' | 'OR'
 ```
 
 When you put a valid query into the parser and then press Enter, the parser returns the query plan. The query plan can have the following structure (depending on the query).
