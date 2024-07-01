@@ -69,9 +69,9 @@ groupbyoption   :   'SOURCE' | 'TARGET' | 'LENGTH' | 'SOURCE TARGET'
 pathPattern     :   pathName '=' nodePattern edgePattern nodePattern ('WHERE' complexCondition)? 
 nodePattern     :   '('var?')'
 edgePattern     :   '-['rpq?']->' | '<-['rpq?']' | '~['rpq?']~'
-rpq             : '(' rpq ')' | label | '!' label | label '^' | rpq '?' | rpq '+' rpqrestrictor? 
-                | rpq '*' rpqrestrictor? | rpq '/' rpq | rpq '|' rpq 
-rpqrestrictor   : '{'restrictor_ext'}'
+rpq             :   '(' rpq ')' | label | '!' label | label '^' | rpq '?' | rpq '+' rpqrestrictor? 
+                |   rpq '*' rpqrestrictor? | rpq '/' rpq | rpq '|' rpq 
+rpqrestrictor   :   '{'restrictor_ext'}'
 complexCondition:   condition | condition boolOp complexCondition
 condition       :   function compareSym '\''text'\'' 
 compareSym      :   '=' | '!=' | '<' | '>' | '<=' | '>='
