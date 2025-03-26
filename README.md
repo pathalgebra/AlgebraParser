@@ -5,6 +5,8 @@ Our parser consists of a Java application divided into two main components: the 
 Subsequently, the parse tree to query tree transformer traverses the parse tree from left to right, extracting all the algebraic operations.
 This process results in a query plan tree, which is displayed later in the command line.
 
+A functional implementation of the language (with restrictions) is currently available in the following GitHub repository: [PathDB](https://github.com/dbgutalca/PathDB).
+
 Table of Contents
 ================================================================================
 - [Project Build](#project-build)
